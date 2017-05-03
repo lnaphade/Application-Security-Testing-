@@ -60,7 +60,7 @@ Attacker's machine:
 ```
 nc -nv 192.168.200.150 775
 
-```
+
 
 
 
