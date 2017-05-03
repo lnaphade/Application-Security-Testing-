@@ -1,4 +1,5 @@
 <b>bWAPP is an insecure open-source web application designed to improve the skills of students, developers or people interested in IT security in order to discover and prevent web vulnerabilities</b>
+<font color="red">as my expectation bWAPP is the best unsecure application to test owasp top 10 for Student !</font>
 # A1 - Injection
 
 ### HTML Injection - Reflected (GET)
