@@ -1,3 +1,4 @@
+<b>bWAPP is an insecure open-source web application designed to improve the skills of students, developers or people interested in IT security in order to discover and prevent web vulnerabilities</b>
 # A1 - Injection
 
 ### HTML Injection - Reflected (GET)
