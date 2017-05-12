@@ -1,7 +1,7 @@
 
 ### Blind SQL Injection Testing #
 
-Time-Based BLIND SQL INJECTION - EXTRACT DATABASE USER
+### Now I am going to use Time-Based BLIND SQL INJECTION and EXTRACT DATABASE USER
 
 ```	 
 
